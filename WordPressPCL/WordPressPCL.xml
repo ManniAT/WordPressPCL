@@ -9,11 +9,11 @@
             Client class for interaction with Categories endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.Categories.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.Categories.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
-            <param name="HttpHelper">reference to HttpHelper class for interaction with HTTP</param>
+            <param name="pHttpHelper">reference to HttpHelper class for interaction with HTTP</param>
             <param name="defaultPath">path to site, EX. http://demo.com/wp-json/ </param>
         </member>
         <member name="T:WordPressPCL.Client.Comments">
@@ -21,11 +21,11 @@
             Client class for interaction with Comments endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.Comments.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.Comments.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
-            <param name="HttpHelper">reference to HttpHelper class for interaction with HTTP</param>
+            <param name="pHttpHelper">reference to HttpHelper class for interaction with HTTP</param>
             <param name="defaultPath">path to site, EX. http://demo.com/wp-json/ </param>
         </member>
         <member name="M:WordPressPCL.Client.Comments.GetCommentsForPost(System.Int32,System.Boolean,System.Boolean)">
@@ -59,7 +59,7 @@
             Base class for CRUDOperation with default implementation of all necessary operations
             </summary>
             <typeparam name="TClass">DTO class</typeparam>
-            <typeparam name="QClass">QueryBuilder class</typeparam>
+            <typeparam name="TQClass">QueryBuilder class</typeparam>
         </member>
         <member name="P:WordPressPCL.Client.CRUDOperation`2.DefaultPath">
             <summary>
@@ -69,6 +69,11 @@
         <member name="P:WordPressPCL.Client.CRUDOperation`2.MethodPath">
             <summary>
             path to endpoint EX. posts
+            </summary>
+        </member>
+        <member name="F:WordPressPCL.Client.CRUDOperation`2._httpHelper">
+            <summary>
+            The HTTP helper
             </summary>
         </member>
         <member name="P:WordPressPCL.Client.CRUDOperation`2.HttpHelper">
@@ -81,7 +86,7 @@
             Is object must be force deleted
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.CRUDOperation`2.#ctor(WordPressPCL.Utility.HttpHelper@,System.String,System.String,System.Boolean)">
+        <member name="M:WordPressPCL.Client.CRUDOperation`2.#ctor(WordPressPCL.Utility.HttpHelper,System.String,System.String,System.Boolean)">
             <summary>
             Constructor
             </summary>
@@ -149,7 +154,7 @@
             Class to create custom requests
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.CustomRequest.#ctor(WordPressPCL.Utility.HttpHelper@)">
+        <member name="M:WordPressPCL.Client.CustomRequest.#ctor(WordPressPCL.Utility.HttpHelper)">
             <summary>
             Constructor
             </summary>
@@ -197,7 +202,7 @@
             Client class for interaction with Media endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.Media.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.Media.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
@@ -212,6 +217,15 @@
             <param name="filename">Name of file in WP Media Library</param>
             <param name="mimeType">Override for automatic mime type detection</param>
             <returns>Created media object</returns>
+        </member>
+        <member name="M:WordPressPCL.Client.Media.Create(System.String,System.String,System.String)">
+            <summary>
+            Create Media entity with attachment
+            </summary>
+            <param name="filePath">Local Path to file</param>
+            <param name="filename">Name of file in WP Media Library</param>
+            <returns>Created media object</returns>
+            <param name="mimeType">Override for automatic mime type detection</param>
         </member>
         <member name="M:WordPressPCL.Client.Media.Delete(System.Int32)">
             <summary>
@@ -265,7 +279,7 @@
             Client class for interaction with Pages endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.Pages.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.Pages.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
@@ -348,11 +362,11 @@
             Client class for interaction with Posts endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.Posts.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.Posts.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
-            <param name="HttpHelper">reference to HttpHelper class for interaction with HTTP</param>
+            <param name="pHttpHelper">reference to HttpHelper class for interaction with HTTP</param>
             <param name="defaultPath">path to site, EX. http://demo.com/wp-json/ </param>
         </member>
         <member name="M:WordPressPCL.Client.Posts.GetStickyPosts(System.Boolean,System.Boolean)">
@@ -419,7 +433,7 @@
             Client class for interaction with Post Types endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.PostStatuses.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.PostStatuses.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
@@ -456,7 +470,7 @@
             Client class for interaction with Post Types endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.PostTypes.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.PostTypes.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
@@ -493,11 +507,11 @@
             Client class for interaction with Tags endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.Tags.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.Tags.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
-            <param name="HttpHelper">reference to HttpHelper class for interaction with HTTP</param>
+            <param name="pHttpHelper">reference to HttpHelper class for interaction with HTTP</param>
             <param name="defaultPath">path to site, EX. http://demo.com/wp-json/ </param>
         </member>
         <member name="T:WordPressPCL.Client.Taxonomies">
@@ -505,7 +519,7 @@
             Client class for interaction with Taxonomies endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.Taxonomies.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.Taxonomies.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
@@ -550,7 +564,7 @@
             Client class for interaction with Users endpoint WP REST API
             </summary>
         </member>
-        <member name="M:WordPressPCL.Client.Users.#ctor(WordPressPCL.Utility.HttpHelper@,System.String)">
+        <member name="M:WordPressPCL.Client.Users.#ctor(WordPressPCL.Utility.HttpHelper,System.String)">
             <summary>
             Constructor
             </summary>
@@ -3339,6 +3353,34 @@
             </summary>
             <param name="httpClient">Http client which would be used for sending requests to the WordPress API endpoint.</param>
         </member>
+        <member name="M:WordPressPCL.Utility.HttpHelper.GetRequest``1(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the request.
+            </summary>
+            <typeparam name="TClass">The type of the t class.</typeparam>
+            <param name="route">The route.</param>
+            <param name="embed">if set to <c>true</c> [embed].</param>
+            <param name="isAuthRequired">if set to <c>true</c> [is authentication required].</param>
+            <returns>TClass.</returns>
+        </member>
+        <member name="M:WordPressPCL.Utility.HttpHelper.PostRequest``1(System.String,System.Net.Http.HttpContent,System.Boolean)">
+            <summary>
+            Posts the request.
+            </summary>
+            <typeparam name="TClass">The type of the t class.</typeparam>
+            <param name="route">The route.</param>
+            <param name="postBody">The ost body.</param>
+            <param name="isAuthRequired">if set to <c>true</c> [is authentication required].</param>
+            <returns>System.ValueTuple&lt;TClass, HttpResponseMessage&gt;.</returns>
+        </member>
+        <member name="M:WordPressPCL.Utility.HttpHelper.DeleteRequest(System.String,System.Boolean)">
+            <summary>
+            Deletes the request.
+            </summary>
+            <param name="route">The route.</param>
+            <param name="isAuthRequired">if set to <c>true</c> [is authentication required].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
         <member name="T:WordPressPCL.Utility.MediaQueryBuilder">
             <summary>
             Media Query Builder class to construct queries with valid parameters
@@ -3849,6 +3891,16 @@
             Main class containing the wrapper client with all public API endpoints.
             </summary>
         </member>
+        <member name="F:WordPressPCL.WordPressClient._httpHelper">
+            <summary>
+            The HTTP helper
+            </summary>
+        </member>
+        <member name="F:WordPressPCL.WordPressClient._defaultPath">
+            <summary>
+            The default path
+            </summary>
+        </member>
         <member name="P:WordPressPCL.WordPressClient.WordPressUri">
             <summary>
             WordPressUri holds the WordPress API endpoint, e.g. "http://demo.wp-api.org/wp-json/wp/v2/"
@@ -3990,20 +4042,6 @@
             <param name="token"></param>
         </member>
         <member name="M:WordPressPCL.WordPressClient.GetToken">
-            <summary>
-            Gets the JWToken from the client
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:WordPressPCL.WordPressClient.SetApplicationPassword(System.String)">
-            <summary>
-            Store Application Password in the Client
-            </summary>
-            <param name="applictionPassword"></param>
-        </member>
-    </members>
-</doc>
-   <member name="M:WordPressPCL.WordPressClient.GetToken">
             <summary>
             Gets the JWToken from the client
             </summary>

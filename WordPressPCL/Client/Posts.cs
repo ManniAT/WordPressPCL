@@ -17,9 +17,9 @@ namespace WordPressPCL.Client
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="HttpHelper">reference to HttpHelper class for interaction with HTTP</param>
+        /// <param name="pHttpHelper">reference to HttpHelper class for interaction with HTTP</param>
         /// <param name="defaultPath">path to site, EX. http://demo.com/wp-json/ </param>
-        public Posts(ref HttpHelper HttpHelper, string defaultPath) : base(ref HttpHelper, defaultPath, _methodPath)
+        public Posts(HttpHelper pHttpHelper, string defaultPath) : base(pHttpHelper, defaultPath, _methodPath)
         {
         }
 

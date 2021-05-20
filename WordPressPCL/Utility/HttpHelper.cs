@@ -89,7 +89,15 @@ namespace WordPressPCL.Utility
             };
         }
 
-        internal async Task<TClass> GetRequest<TClass>(string route, bool embed, bool isAuthRequired = false)
+		/// <summary>
+		/// Gets the request.
+		/// </summary>
+		/// <typeparam name="TClass">The type of the t class.</typeparam>
+		/// <param name="route">The route.</param>
+		/// <param name="embed">if set to <c>true</c> [embed].</param>
+		/// <param name="isAuthRequired">if set to <c>true</c> [is authentication required].</param>
+		/// <returns>TClass.</returns>
+		public async Task<TClass> GetRequest<TClass>(string route, bool embed, bool isAuthRequired = false)
             where TClass : class
         {
             string embedParam = "";
@@ -123,7 +131,15 @@ namespace WordPressPCL.Utility
             }
         }
 
-        internal async Task<(TClass, HttpResponseMessage)> PostRequest<TClass>(string route, HttpContent postBody, bool isAuthRequired = true)
+		/// <summary>
+		/// Posts the request.
+		/// </summary>
+		/// <typeparam name="TClass">The type of the t class.</typeparam>
+		/// <param name="route">The route.</param>
+		/// <param name="postBody">The ost body.</param>
+		/// <param name="isAuthRequired">if set to <c>true</c> [is authentication required].</param>
+		/// <returns>System.ValueTuple&lt;TClass, HttpResponseMessage&gt;.</returns>
+		public async Task<(TClass, HttpResponseMessage)> PostRequest<TClass>(string route, HttpContent postBody, bool isAuthRequired = true)
             where TClass : class
         {
 
@@ -151,7 +167,13 @@ namespace WordPressPCL.Utility
             }
         }
 
-        internal async Task<bool> DeleteRequest(string route, bool isAuthRequired = true)
+		/// <summary>
+		/// Deletes the request.
+		/// </summary>
+		/// <param name="route">The route.</param>
+		/// <param name="isAuthRequired">if set to <c>true</c> [is authentication required].</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		public async Task<bool> DeleteRequest(string route, bool isAuthRequired = true)
         {
             HttpResponseMessage response;
             using (var requestMessage = new HttpRequestMessage(HttpMethod.Delete, $"{_WordpressURI}{route}"))
